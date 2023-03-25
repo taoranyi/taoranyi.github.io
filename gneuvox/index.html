@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="GNeuVox: Generalizable Neural Voxels for Fast Human Radiance Fields.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GNeuVox: Generalizable Neural Voxels for Fast Human Radiance Fields</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="../img/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://jaminfong.cn/tineuvox">
+            TiNeuVox
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<!-- title -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">GNeuVox: Generalizable Neural Voxels for Fast Human Radiance Fields</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/taoranyi">Taoran Yi</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://jaminfong.cn/">Jiemin Fang</a><sup>2,1*</sup>,</span>
+              <span class="author-block">
+                <a href="https://xinggangw.info/">Xinggang Wang</a><sup>1✉</sup>,</span>
+              <span class="author-block">
+                <a href="http://eic.hust.edu.cn/professor/liuwenyu/">Wenyu Liu</a><sup>1</sup>,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>School of EIC, HUST</span>
+            <span class="author-block"><sup>2</sup>Institute of AI, HUST</span>
+          </div>
+
+          * <i>denotes equal contributions.</i>  </br>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/hustvl/GNeuVox"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- framework -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <p align="center">
+          <image width="100%" src="static/images/framework.png" class="img-responsive" alt="overview">
+        </p>
+        <div class="content has-text-justified">
+          In this paper, we propose a rendering framework that can learn moving human body structures extremely quickly from a monocular video, named as GNeuVox. The framework is built by integrating both neural fields and neural voxels. Especially, a set of generalizable neural voxels are constructed. With pretrained on various human bodies, these general voxels represent a basic skeleton and can provide strong geometric priors. For the fine-tuning process, individual voxels are constructed for learning differential textures, complementary to general voxels. Thus learning a novel body can be further accelerated, taking only a few minutes. Our method shows significantly higher training efficiency compared with previous methods, while maintaining similar rendering quality.
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="text-center">
+          <div style="position:relative;padding-top:56.25%;">
+              <iframe src="https://www.youtube.com/embed/" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+          </div>
+      </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<!-- show pose control -->
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Render Moving Human Bodies at Free Viewpoints  </h2>
+    <div class="video-row">
+      <video src="./static/videos/input.webm" controls autoplay muted loop playsinline width="45%" ></video>
+      <video src="./static/videos/freepoint.webm" controls autoplay muted loop playsinline width="45%"></video>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Render Moving Human Bodies at Any Pose  </h2>
+    <div class="video-row">
+      <video src="./static/videos/111.webm" controls autoplay muted loop playsinline width="45%"></video>
+      <video src="./static/videos/pose.webm" controls autoplay muted loop playsinline  width="45%"></video>
+    </div>
+  </div>
+</section>
+
+<!-- show comparisons -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Comparison with HumanNeRF On Monocular Videos</h2>
+      <div class="container is-max-desktop">
+        <style>
+          .title-spaced0 {
+            padding-left: 100px;
+          }
+        </style>
+        <style>
+          .title-spaced1 {
+            padding-right: 180px; /* 调整为适当的像素值 */
+          }
+        </style>
+        <style>
+          .title-spaced2 {
+            padding-right: 55px; /* 调整为适当的像素值 */
+          }
+        </style>
+        <h3 class="title is-5 title-spaced0">
+          <span class="title-spaced1">Input</span><span class="title-spaced2">HumanNeRF(288 hours)</span> GNeuVox(Fine-tune 15 mins)
+        </h3>
+        <section class="hero teaser">
+          <div class="container is-max-desktop">
+            <div class="video-row">
+              <image src="./static/images/frame_387_000007.png" class="img-responsive" width="30%">
+              <video src="./static/videos/387_7_o.webm" controls autoplay muted loop playsinline width="30%"></video>
+              <video src="./static/videos/387_7_zju.webm" controls autoplay muted loop playsinline  width="30%"></video>
+            </div>
+          </div>
+        </section>
+
+        <section class="hero teaser">
+          <div class="container is-max-desktop">
+            <div class="video-row">
+              <image src="./static/images/frame_392_000019.png" class="img-responsive" width="30%">
+              <video src="./static/videos/392_19_o.webm" controls autoplay muted loop playsinline width="30%"></video>
+              <video src="./static/videos/392_19_zju.webm" controls autoplay muted loop playsinline  width="30%"></video>
+            </div>
+          </div>
+        </section>
+
+        <section class="hero teaser">
+          <div class="container is-max-desktop">
+            <div class="video-row">
+              <image src="./static/images/frame_393_000002.png" class="img-responsive" width="30%">
+              <video src="./static/videos/393_2_o.webm" controls autoplay muted loop playsinline width="30%"></video>
+              <video src="./static/videos/393_2_zju.webm" controls autoplay muted loop playsinline  width="30%"></video>
+            </div>
+          </div>
+        </section>
+
+        <section class="hero teaser">
+          <div class="container is-max-desktop">
+            <div class="video-row">
+              <image src="./static/images/frame_394_000022.png" class="img-responsive" width="30%">
+              <video src="./static/videos/394_22_o.webm" controls autoplay muted loop playsinline width="30%"></video>
+              <video src="./static/videos/394_22_zju.webm" controls autoplay muted loop playsinline  width="30%"></video>
+            </div>
+          </div>
+        </section>
+      </div>
+    <br>
+  </div>
+  </section>
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Citation</h2>
+      <!-- <pre><code>?????????</code></pre> -->
+    </div>
+  </section>
+  
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Acknowledgements</h2>
+      <!-- The authors would like to thank ????????? -->
+    </div>
+  </section>
+  
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link"
+           href="https://arxiv.org/abs/">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/hustvl/GNeuVox" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              The website template was borrowed from <a href="https://nerfies.github.io/">Nerfies</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  </body>
+  </html>
+  
+
+
