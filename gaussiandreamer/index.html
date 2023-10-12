@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XB3PR2Y1TQ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XB3PR2Y1TQ');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>GaussianDreamer: Fast Generation from Text to 3D Gaussian Splatting with Point Cloud Priors</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+
+    <meta property="og:site_name" content="GaussianDreamer" />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:title" content="GaussianDreamer: Fast Generation from Text to 3D Gaussian Splatting with Point Cloud Priors" />
+    <meta property="og:description" content="GaussianDreamer: Fast Generation from Text to 3D Gaussian Splatting with Point Cloud Priors, 2023." />
+    <meta property="og:url" content="" />
+
+    <script src="assets/js/video_comparison.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <div class="highlight-clean" style="padding-bottom: 10px;">
+        <div class="container" style="max-width: 1024px; margin-bottom: 20px;">
+            <h1 class="text-center"><b>GaussianDreamer</b>:  Fast Generation from Text to 3D Gaussian Splatting with Point Cloud Priors</h1>
+        </div>
+        <div class="container" style="max-width: 980px; margin-bottom: 20px;">
+            <div class="row authors">
+                <div class="col-sm-12">
+                    <!-- <h5 class="text-center" style="text-align: center">Authors anonymized</h5> -->
+                    <div class="text-center">
+                        <span class="author-block">
+                            <a href="https://taoranyi.github.io">Taoran Yi</a><sup>1</sup>,</span>
+                        <span class="author-block">
+                            <a href="https://jaminfong.cn">Jiemin Fang</a><sup>2</sup>,
+                          </span>
+                        <span class="author-block">
+                          <a href="https://guanjunwu.github.io">Guanjun Wu</a><sup>1</sup>,</span>
+
+
+                        
+            
+                        <span class="author-block">
+                          <a href="http://lingxixie.com/">Lingxi Xie</a><sup>2</sup>,
+                        </span>
+                        <span class="author-block">
+                          <a href="https://scholar.google.com/citations?user=Ud6aBAcAAAAJ&hl=zh-CN">Xiaopeng Zhang</a><sup>2</sup>,
+                        </span>
+                        <p></p>
+                        <span class="author-block">
+                          <a href="https://scholar.google.com/citations?user=D7jDk7gAAAAJ&hl=zh-CN">Wenyu Liu</a><sup>1</sup>,
+                        </span>
+                        <span class="author-block">
+                          <a href="https://www.qitian1987.com/">Tian Qi</a><sup>1</sup>,
+                        </span>
+                        <span class="author-block">
+                          <a href="https://xwcv.github.io/">Xinggang Wang</a><sup>1+</sup>
+                        </span>
+                      </div>
+            
+                      <div class="text-center">
+                        <span class="author-block"><sup>1</sup>Huazhong University of Science and Technology</span>
+                        <span class="author-block"><sup>2</sup>Huawei Inc.</span>
+                        <p></p>
+                        <span class="author-block"><sup>+</sup>Corresponding Authors.</span>
+                      </div>
+                </div>
+            </div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Abstract</h2>
+                <p>
+                    In recent times, the generation of 3D assets from text prompts has shown impressive results. Both 2D and 3D diffusion models can generate decent 3D objects based on prompts. 3D diffusion models have good 3D consistency, but their quality and generalization are limited as trainable 3D data is expensive and hard to obtain. 2D diffusion models enjoy strong abilities of generalization and fine generation, but the 3D consistency is hard to guarantee.
+This paper attempts to bridge the power from the two types of diffusion models via the recent explicit and efficient 3D Gaussian splatting representation. A fast 3D generation framework, named as GaussianDreamer, is proposed, where the 3D diffusion model provides point cloud priors for initialization and the 2D diffusion model enriches the geometry and appearance. Operations of noisy point growing and color perturbation are introduced to enhance the initialized Gaussians. Our GaussianDreamer can generate a high-quality 3D instance within 25 minutes on one GPU, much faster than previous methods, while the generated instances can be directly rendered in real time.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="max-width: 768px;">
+        <div class="row captioned_videos">
+            <div class="col-md-12">
+                <img src="static/architecture.jpg" alt="architecture" style="width: 100%">
+                <!-- <h6 class="caption" style="text-align: left";>Our multi-view diffusion model learns a joint prior over 4 different views. 
+                    We optimize the UNet during training using real 3D data. During testing (3D generation), it can serve as a multi-view prior for 3D 
+                    generation visa Score Distillation Sampling.
+                </h6> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Framework</h2>
+                <p>
+                    Overall framework of GaussianDreamer. Firstly, we utilize a 3D diffusion model to generate the initialized point clouds. After executing noisy point growing and color perturbation on the point cloud, we proceed to initialize the 3D Gaussians. The initialized 3D Gaussians are further optimized using the SDS method on a 2D diffusion model. Finally, we render the image using the 3D Gaussians by employing 3D Gaussian Splatting.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="max-width: 768px;">
+        <div class="row captioned_videos">
+            <div class="col-md-12">
+                <img src="static/framework.png" alt="architecture" style="width: 100%">
+                <!-- <h6 class="caption" style="text-align: left";>Our multi-view diffusion model learns a joint prior over 4 different views. 
+                    We optimize the UNet during training using real 3D data. During testing (3D generation), it can serve as a multi-view prior for 3D 
+                    generation visa Score Distillation Sampling.
+                </h6> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Training Process</h2>
+                <p>A 3D instance can be generated within 25 minutes on one GPU, much faster than previous methods, and can be directly rendered in real time, taking <50MB storage space.</p>
+            </div>
+        </div>
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="static/visualization.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+    </div> -->
+
+    <!-- <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Generate 3D from text yourself!</h2>
+            </div>
+        </div>
+        <div class="row compositional captioned_videos">
+            <div class="col-sm-8 text">
+                <p class="selectable left" id="compositional_tags_depth_0"></p>
+            </div>
+            <div class="col-sm-4 my-auto">
+                <div class="video-compare-container">
+                    <video id="compositionalVideo" class="video" autoplay loop playsinline muted>
+                        <div class="screen" id="compositionalScreen"></div>
+                        <source id="compositionalVideoSrc" src="https://pub-b1f092b6867f4495b8f149d222a3bffe.r2.dev/journey_sept28/cropped/full_continuous/a_DSLR_photo_of_a_squirrel___rgbdn_hq_15000.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Comparison Results</h2>
+                <p>Qualitative comparisons between our method and <a href="https://dreamfusion3d.github.io/">DreamFusion</a>, <a href="https://research.nvidia.com/labs/dir/magic3d/">Magic3D</a> and <a href="https://fantasia3d.github.io/">Fantasia3D</a>. Since Magic3D does not have open-source code, the results of Magic3D are downloaded from its paper and project page.</a></p>
+            </div>
+
+            <div class="container" style="max-width: 768px;">
+                <div class="row captioned_videos">
+                    <div class="col-md-12">
+                        <img src="static/compare.png" alt="architecture" style="width: 100%">
+                        <!-- <h6 class="caption" style="text-align: left";>Our multi-view diffusion model learns a joint prior over 4 different views. 
+                            We optimize the UNet during training using real 3D data. During testing (3D generation), it can serve as a multi-view prior for 3D 
+                            generation visa Score Distillation Sampling.
+                        </h6> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>More Example generated objects</h2>
+                <p>More generated samples by our GaussianDreamer.</p>
+            </div>
+        </div>
+
+        <div class="col-sm-4 my-auto center" style="margin-left:auto; margin-right: auto;">
+            <a href="./gallery_0.html" class="btn btn-primary btn-lg btn-search">
+                Additional Examples
+            </a>
+        </div>
+    </div>
+
+    <div class="container" style="max-width: 768px;">
+        <footer>
+            <p> Website template from <a href="https://dreamfusion3d.github.io/">DreamFusion</a>. We thank the authors for the open-source code.</p>
+        </footer>
+    </div>
+    <script src="https://polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
+    <script src="assets/js/yall.js"></script>
+    <script>
+        yall(
+            {
+                observeChanges: true
+            }
+        );
+    </script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/js/webflow.fd002feec.js"></script>
+    <!-- Import the component -->
+</body>
+
+</html>
