@@ -20,6 +20,7 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="./static/icon.png">
 
 
     <meta property="og:site_name" content="GaussianDreamer" />
@@ -64,15 +65,60 @@
           </div>
       
         </div>
-      </nav>
-
+    </nav>
+    
+    <div class="video-compare-container" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+        <h6 class="caption" style="margin-bottom: 10px;">A highly detailed stone bust of Carl Friedrich Gauss</h6>
+        <video class="video lazy" loop playsinline autoplay muted style="width: 80%;">
+            <source data-src="static/title.mp4" type="video/mp4"></source>
+        </video>
+    </div>
     <div class="highlight-clean" style="padding-bottom: 10px;">
         <div class="container" style="max-width: 1024px; margin-bottom: 20px;">
             <h1 class="text-center"><b>GaussianDreamer</b>:  Fast Generation from Text to 3D Gaussian Splatting with Point Cloud Priors</h1>
         </div>
+<!-- 
         <div class="container" style="max-width: 980px; margin-bottom: 20px;">
             <div class="row authors">
-                <div class="col-sm-12">
+                <div class="col">
+                    <h5 class="text-center"><a class="text-center" href="https://taoranyi.github.io">Taoran Yi</a><sup>1</sup>, </a></h5>
+                </div>
+                <div class="col">
+                    <h5 class="text-center"><a href="https://jaminfong.cn">Jiemin Fang</a><sup>2</sup>,</a></h5>
+                </div>
+                <div class="col">
+                    <h5 class="text-center"><a class="text-center" href="https://guanjunwu.github.io">Guanjun Wu</a><sup>1</sup>,</a></h5>
+                </div>
+                <div class="col">
+                    <h5 class="text-center"><a class="text-center" href="http://lingxixie.com/">Lingxi Xie</a><sup>2</sup>,</a></h5>
+                </div>
+                <p></p>
+                <div class="col">
+                    <h5 class="text-center"><a class="text-center" href="https://scholar.google.com/citations?user=Ud6aBAcAAAAJ&hl=zh-CN">Xiaopeng Zhang</a><sup>2</sup>,</a></h5>
+                </div>
+                <div class="col">
+                    <h5 class="text-center"><a class="text-center" href="https://scholar.google.com/citations?user=D7jDk7gAAAAJ&hl=zh-CN">Wenyu Liu</a><sup>1</sup>,</a></h5>
+                </div>
+                <div class="col">
+                    <h5 class="text-center"><a class="text-center" href="https://www.qitian1987.com/">Tian Qi</a><sup>2</sup>,</a></h5>
+                </div>
+                <div class="col">
+                    <h5 class="text-center"><a class="text-center" href="https://xwcv.github.io/">Xinggang Wang</a><sup>1+</sup></a></h5>
+                </div>
+            </div>
+            <div class="row affiliations">
+                <div class="col">
+                    <h6 class="text-center"><a class="text-center"><sup>1</sup>ByteDance</a></h6>
+                </div>
+                <div class="col">
+                    <h6 class="text-center"><a class="text-center"><sup>2</sup>University of California San Diego</a></h6>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="container" style="max-width: 980px; margin-bottom: 20px;">
+            <div class="row authors">
+                <div class="col">
                     <!-- <h5 class="text-center" style="text-align: center">Authors anonymized</h5> -->
                     <div class="text-center">
                         <span class="author-block">
@@ -88,7 +134,7 @@
                         <span class="author-block">
                           <a href="https://scholar.google.com/citations?user=Ud6aBAcAAAAJ&hl=zh-CN">Xiaopeng Zhang</a><sup>2</sup>,
                         </span>
-                        <p></p>
+                        <!-- <p></p> -->
                         <span class="author-block">
                           <a href="https://scholar.google.com/citations?user=D7jDk7gAAAAJ&hl=zh-CN">Wenyu Liu</a><sup>1</sup>,
                         </span>
@@ -103,7 +149,9 @@
                       <div class="text-center">
                         <span class="author-block"><sup>1</sup>Huazhong University of Science and Technology</span>
                         <span class="author-block"><sup>2</sup>Huawei Inc.</span>
-                        <p></p>
+                        <!-- <p></p> -->
+                      </div>
+                        <div class="text-center">
                         <span class="author-block"><sup>+</sup>Corresponding Authors.</span>
                       </div>
                 </div>
@@ -251,7 +299,7 @@ This paper attempts to bridge the power from the two types of diffusion models v
     <div class="container" style="max-width: 768px;">
         <div class="row">
             <div class="col-sm-12">
-                <h2>More Example generated objects</h2>
+                <h2>More Generated Objects</h2>
                 <p>More generated samples by our GaussianDreamer.</p>
             </div>
         </div>
