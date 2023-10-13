@@ -35,37 +35,7 @@
 
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-        <div class="navbar-menu">
-          <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                More Research
-              </a>
-              <div class="navbar-dropdown">
-                <a class="navbar-item" href="https://jaminfong.cn/tineuvox">
-                  TiNeuVox
-                </a>
-                <a class="navbar-item" href="https://taoranyi.com/gneuvox/">
-                    GNeuVox
-                  </a>
-                  <a class="navbar-item" href="https://guanjunwu.github.io/4dgs/">
-                    4D-GS
-                  </a>
-    
-              </div>
-            </div>
-          </div>
-      
-        </div>
-    </nav>
+
     
     <div class="video-compare-container" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
         <h6 class="caption" style="margin-bottom: 10px;">A highly detailed stone bust of Carl Friedrich Gauss</h6>
@@ -84,27 +54,38 @@
                 <div class="col">
                     <!-- <h5 class="text-center" style="text-align: center">Authors anonymized</h5> -->
                     <div class="text-center">
-                        <span class="author-block">
-                            <a href="https://taoranyi.github.io">Taoran Yi</a><sup>1</sup>,</span>
-                        <span class="author-block">
+                        <span class="author-block" style="font-size: 20px;">
+                            <a href="https://taoranyi.github.io">Taoran Yi</a><sup>1</sup>,
+                        </span>
+                        <span class="author-block" style="font-size: 20px;">
+
                             <a href="https://jaminfong.cn">Jiemin Fang</a><sup>2</sup>,
                           </span>
-                        <span class="author-block">
+                          <span class="author-block" style="font-size: 20px;">
+
                           <a href="https://guanjunwu.github.io">Guanjun Wu</a><sup>1</sup>,</span>
-                        <span class="author-block">
+                          <span class="author-block" style="font-size: 20px;">
+
                           <a href="http://lingxixie.com/">Lingxi Xie</a><sup>2</sup>,
                         </span>
-                        <span class="author-block">
+                        <span class="author-block" style="font-size: 20px;">
+
                           <a href="https://scholar.google.com/citations?user=Ud6aBAcAAAAJ&hl=zh-CN">Xiaopeng Zhang</a><sup>2</sup>,
                         </span>
+                    </div>
+                    <div class="text-center">
+                    
                         <!-- <p></p> -->
-                        <span class="author-block">
+                        <span class="author-block" style="font-size: 20px;">
+
                           <a href="https://scholar.google.com/citations?user=D7jDk7gAAAAJ&hl=zh-CN">Wenyu Liu</a><sup>1</sup>,
                         </span>
-                        <span class="author-block">
+                        <span class="author-block" style="font-size: 20px;">
+
                           <a href="https://www.qitian1987.com/">Tian Qi</a><sup>2</sup>,
                         </span>
-                        <span class="author-block">
+                        <span class="author-block" style="font-size: 20px;">
+
                           <a href="https://xwcv.github.io/">Xinggang Wang</a><sup>1+</sup>
                         </span>
                       </div>
@@ -116,7 +97,7 @@
                       </div>
                         <div class="text-center">
                         <span class="author-block"><sup>+</sup>Corresponding Authors.</span>
-                      </div>
+                    </div>
                 </div>
             </div>
             <div class="buttons" style="margin-top: 8px; margin-bottom: 8px;">
@@ -198,9 +179,9 @@ This paper attempts to bridge the power from the two types of diffusion models v
                 <p>A 3D instance can be generated within 25 minutes on one GPU, much faster than previous methods, and can be directly rendered in real time, taking < 50MB storage space.</p>
             </div>
         </div>
-        <div class="compositional captioned_videos">
-            <video class="video lazy" autoplay loop playsinline muted  style="width: 60%">
-                <source data-src="static/reoutput.mp4" type="video/mp4" ></source>
+        <div class="compositional captioned_videos" style="display: flex; justify-content: center;">
+            <video class="video lazy" autoplay loop playsinline muted style="width: 60%;">
+                <source data-src="static/reoutput.mp4" type="video/mp4"></source>
             </video>
         </div>
     </div>
@@ -458,17 +439,19 @@ This paper attempts to bridge the power from the two types of diffusion models v
         <div class="container is-max-desktop content">
           <h2 class="title">BibTeX</h2>
           <pre><code>
-            @article{GaussianDreamer,
-                title={GaussianDreamer: Fast Generation from Text to 3D Gaussian Splatting with Point Cloud Priors},
-                author={Taoran Yi and Jiemin Fang and Guanjun Wu and Lingxi Xie and Xiaopeng Zhang and Wenyu Liu and Qi Tian and Xinggang Wang},
-                journal={arxiv:2310.08529},
-                year={2023}
-                }
-          
+@article{GaussianDreamer,
+    title={GaussianDreamer: Fast Generation from Text to 3D Gaussian Splatting with Point Cloud Priors},
+    author={Taoran Yi and Jiemin Fang and Guanjun Wu and Lingxi Xie and Xiaopeng Zhang and Wenyu Liu and Qi Tian and Xinggang Wang},
+    journal={arxiv:2310.08529},
+    year={2023}
+    }
           </code></pre>
         </div>
-      </section>
+    </section>
+
     
+
+
     <div class="container" style="max-width: 768px;">
         <footer>
             <p> Website template from <a href="https://dreamfusion3d.github.io/">DreamFusion</a>. We thank the authors for the open-source code.</p>
