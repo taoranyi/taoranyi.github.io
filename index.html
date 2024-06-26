@@ -161,53 +161,98 @@
         * indicates equal contribution
       </td>
     </tr>
-
     <tr onmouseout="openscene_stop()" onmouseover="openscene_start()">  
-        <td width="25%">
-          <div class="one">
-          <!-- <div class="two" id = 'openscene_shape'>
-          <video  width="160" height="100" muted autoplay loop>
-              <source src="media/openscene_teaser.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-              </video></div> -->
-          <img src='media/4dgs.gif' width="180" height="120"></div>
-          <script type="text/javascript">
-          function openscene_start() { 
-          document.getElementById('openscene_shape').style.opacity = "1";
-          }
-          function openscene_stop() { 
-          document.getElementById('openscene_shape').style.opacity = "0"; 
-          }
-          openscene_stop()
-          </script>
-        </td>
-        <td valign="top" width="75%">
-          <papertitle>
-            4D Gaussian Splatting for Real-Time Dynamic Scene Rendering
-          </papertitle>
+      <td width="25%">
+        <div class="one">
+        <!-- <div class="two" id = 'openscene_shape'>
+        <video  width="160" height="100" muted autoplay loop>
+            <source src="media/openscene_teaser.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video></div> -->
+        <img src='media/gaussiandreamerpro.gif' width="200" height="90"></div>
+        <script type="text/javascript">
+        function openscene_start() { 
+        document.getElementById('openscene_shape').style.opacity = "1";
+        }
+        function openscene_stop() { 
+        document.getElementById('openscene_shape').style.opacity = "0"; 
+        }
+        openscene_stop()
+        </script>
+      </td>
+      <td valign="top" width="75%">
+        <papertitle>
+          GaussianDreamerPro: Text to Manipulable 3D Gaussians with Highly Enhanced Quality
+        </papertitle>
           <br>
-          <a href="https://guanjunwu.github.io/">Guanjun Wu*</a>, 
-          <strong>Taoran Yi*</strong>,
+          <strong>Taoran Yi</strong>,
           <a href="https://jaminfong.cn/">Jiemin Fang</a>, 
-          
+          <a href="https://github.com/Zanue">Zanwei Zhou</a>, 
+          <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-CN&user=9Nw_mKAAAAAJ">Junjie Wang</a>, 
+          <a href="https://guanjunwu.github.io/">Guanjun Wu</a>, 
           <a href="http://lingxixie.com/">Lingxi Xie</a>, 
           <a href="https://scholar.google.com/citations?user=Ud6aBAcAAAAJ&hl=zh-CN">Xiaopeng Zhang</a>, 
-          <a href="https://www.eric-weiwei.com/">Wei Wei</a>,  
           <a href="http://eic.hust.edu.cn/professor/liuwenyu/">Wenyu Liu</a>,  
-          <a href="https://www.qitian1987.com/">Qi Tian</a>, 
-          <a href="https://xwcv.github.io/">Xinggang Wang</a>
+          <a href="https://xwcv.github.io/">Xinggang Wang</a>,
+          <a href="https://www.qitian1987.com/">Qi Tian</a>
           <br>
-          CVPR, 2024
+          arXiv, 2024
           <br>
-          [<a href="https://arxiv.org/abs/2310.08528">Paper</a>] 
-          [<a href="https://guanjunwu.github.io/4dgs">Page</a>]
-          [<a href="https://github.com/hustvl/4DGaussians">Code</a>]
+          [<a href="https://arxiv.org/">Paper</a>] 
+          [<a href="https://taoranyi.com/gaussiandreamerpro/">Page</a>]
+          [<a href="https://github.com/hustvl/GaussianDreamerPro">Code</a>]
   
-          <p style="font-size: 14px;">We introduce the 4D Gaussian Splatting (4D-GS) to achieve real-time dynamic scene rendering while also enjoying high training and storage efficiency. Our 4D-GS method achieves real-time rendering under high resolutions, 70 FPS at a 800*800 resolution on an RTX 3090 GPU, while maintaining comparable or higher quality than previous state-of-the-art methods.</p>
+          <p style="font-size: 14px;">Aiming at highly enhancing the generation quality, we propose a novel framework named GaussianDreamerPro. The main idea is to bind Gaussians to reasonable geometry, which evolves over the whole generation process. Along different stages of our framework, both the geometry and appearance can be enriched progressively. The final output asset is constructed with 3D Gaussians bound to mesh, which shows significantly enhanced details and quality compared with previous methods. Notably, the generated asset can also be seamlessly integrated into downstream manipulation pipelines, e.g. animation, composition, and simulation etc., greatly promoting its potential in wide applications.
+          </p>
         </td>
       </tr>
 
-    
+
+    <tr onmouseout="openscene_stop()" onmouseover="openscene_start()">  
+      <td width="25%">
+        <div class="one">
+        <!-- <div class="two" id = 'openscene_shape'>
+        <video  width="160" height="100" muted autoplay loop>
+            <source src="media/openscene_teaser.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video></div> -->
+        <img src='media/4dgs.gif' width="180" height="120"></div>
+        <script type="text/javascript">
+        function openscene_start() { 
+        document.getElementById('openscene_shape').style.opacity = "1";
+        }
+        function openscene_stop() { 
+        document.getElementById('openscene_shape').style.opacity = "0"; 
+        }
+        openscene_stop()
+        </script>
+      </td>
+      <td valign="top" width="75%">
+        <papertitle>
+          4D Gaussian Splatting for Real-Time Dynamic Scene Rendering
+        </papertitle>
+        <br>
+        <a href="https://guanjunwu.github.io/">Guanjun Wu*</a>, 
+        <strong>Taoran Yi*</strong>,
+        <a href="https://jaminfong.cn/">Jiemin Fang</a>, 
+        
+        <a href="http://lingxixie.com/">Lingxi Xie</a>, 
+        <a href="https://scholar.google.com/citations?user=Ud6aBAcAAAAJ&hl=zh-CN">Xiaopeng Zhang</a>, 
+        <a href="https://www.eric-weiwei.com/">Wei Wei</a>,  
+        <a href="http://eic.hust.edu.cn/professor/liuwenyu/">Wenyu Liu</a>,  
+        <a href="https://www.qitian1987.com/">Qi Tian</a>, 
+        <a href="https://xwcv.github.io/">Xinggang Wang</a>
+        <br>
+        CVPR, 2024
+        <br>
+        [<a href="https://arxiv.org/abs/2310.08528">Paper</a>] 
+        [<a href="https://guanjunwu.github.io/4dgs">Page</a>]
+        [<a href="https://github.com/hustvl/4DGaussians">Code</a>]
+
+        <p style="font-size: 14px;">We introduce the 4D Gaussian Splatting (4D-GS) to achieve real-time dynamic scene rendering while also enjoying high training and storage efficiency. Our 4D-GS method achieves real-time rendering under high resolutions, 70 FPS at a 800*800 resolution on an RTX 3090 GPU, while maintaining comparable or higher quality than previous state-of-the-art methods.</p>
+      </td>
+    </tr>
+
     <tr onmouseout="openscene_stop()" onmouseover="openscene_start()">  
         <td width="25%">
           <div class="one">
